@@ -1,4 +1,4 @@
-DL Mapper Sidecar JAVA Unix Domain Socket Client Example
+IDL Mapper Sidecar JAVA Unix Domain Socket Client Example
 
 [Liveramp's IDL Mapper Sidecar](https://sidecar.readme.io) container can communicate with your application via a Unix socket. The client will exchange HTTP messages over Unix Domain Socket. 
 In order to do that, you will need to configure Sidecar to listen on a socket mounted inside Sidecar container. 
