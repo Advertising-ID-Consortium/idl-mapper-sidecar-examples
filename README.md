@@ -1,2 +1,3 @@
 # idl-mapper-sidecar-examples
-IDL Mapper Sidecar examples
+Repository which contains sidecar & sidecar clients examples.
+ 
