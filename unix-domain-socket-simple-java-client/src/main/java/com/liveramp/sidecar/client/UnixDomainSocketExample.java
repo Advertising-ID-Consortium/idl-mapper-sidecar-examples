@@ -43,7 +43,7 @@ public class UnixDomainSocketExample {
         bytes = is.read(readBuf);
         
         System.out.println();
-        System.out.println("Response from Sidecar's '/env' endpoint:");
+        System.out.println("Response from Sidecar's '/map' endpoint:");
         System.out.println();
         System.out.println(new String(readBuf, 0, bytes, StandardCharsets.UTF_8));
         
