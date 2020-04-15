@@ -3,7 +3,7 @@
 
 ## About
 
-This example shows how to make http requests to Liveramp's IDL Mapper Sidecar's `/health` and `/map` endpoints using Go lang. In example request to Sidecar are done using `IDLMapperClient` that act as wrapper and can be imported into your project.
+This example shows how to make http requests to Liveramp's IDL Mapper Sidecar's `/health` and `/map` endpoints using Go lang. Example is done using `IDLMapperClient` that act as wrapper.
 
 ## Run Liveramp's IDL Mapper Sidecar
 
@@ -31,54 +31,6 @@ go run .
 Example app will make requests to `/health` and `/map` endpoint. Results will be displayed in following format:
 
 ```
-INFO[0000] IDL Mapper's '/health' endpoint responded with status: 200 OK 
-INFO[0000] IDL Mapper's '/map' endpoint for envelope 'AjfowUURXDJnQmc_HNeuswelMv4ZHZQJFM8TpiUnYEyA81Vdgg' responded with mappings: {"SEAT0023":"Xm0023J5H4LcNJYOdeECH7iFfl9Ib0WTUQfU,"SEAT0047":"Xm0047MkRGchQFgiqnzB96yjgdV0blW-VElytUqYVQGHpsX6c" . . .} 
-```
-
-## Import `IDLMapperClient` into your project
-
-
-### Pre go.mod
-
-Get package:
-```bash
-go get github.com/Advertising-ID-Consortium/idl-mapper-sidecar-examples/tcp-simple-go-client/advanced
-```
-
-Import (as shown in `main.go`):
-```
-import "github.com/Advertising-ID-Consortium/idl-mapper-sidecar-examples/tcp-simple-go-client/advanced/idlmapperclient"
-```
-
-Use client (as shown in `main.go`):
-```
-// get configured idl mapper client instance
-idlMapperClient := idlmapperclient.GetIDLMapperClient("http://localhost", 3000)
-
-// call health
-resp, err := idlMapperClient.Health()
-```
-
-
-### Post go.mod
-
-Add dependency to go.mod file and use replace directive: 
-```
-require github.com/Advertising-ID-Consortium/idl-mapper-sidecar-examples/tcp-simple-go-client/advanced v0.0.0
-
-replace github.com/Advertising-ID-Consortium/idl-mapper-sidecar-examples/tcp-simple-go-client/advanced v0.0.0 => <path_to_downloaded_repo>/idl-mapper-sidecar-examples/tcp-simple-go-client/advanced
-```
-
-Import (as shown in `main.go`):
-```
-import "github.com/Advertising-ID-Consortium/idl-mapper-sidecar-examples/tcp-simple-go-client/advanced/idlmapperclient"
-```
-
-Use client (as shown in `main.go`):
-```
-// get configured idl mapper client instance
-idlMapperClient := idlmapperclient.GetIDLMapperClient("http://localhost", 3000)
-
-// call health
-resp, err := idlMapperClient.Health()
+INFO[0000] IDL Mapper's '/health' endpoint responded with status code: 200 
+INFO[0000] IDL Mapper's '/map' endpoint for envelope 'AjfowUURXDJnQmc_HNeuswelMv4ZHZQJFM8TpiUnYEyA81Vdgg' responded with mappings: map[SEAT0000:Xm00008qJ4ii7hBlZ8DX8WrQPKISWMT8AqwAWL3TMZkXcd080 SEAT0001:Xm0001mqTlQbEQHG42IMVVqxJt66OVxG6m3fobgmPWnzcHeyk . . .]
 ```
